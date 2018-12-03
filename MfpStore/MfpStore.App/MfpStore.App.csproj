@@ -5,8 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AppServices\Dto\" />
-    <Folder Include="Enums\" />
     <Folder Include="Extensions\" />
   </ItemGroup>
 
