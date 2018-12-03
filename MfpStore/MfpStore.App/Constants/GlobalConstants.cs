@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MfpStore.App.Constants
+﻿namespace MfpStore.App.Constants
 {
     public static class GlobalConstants
     {

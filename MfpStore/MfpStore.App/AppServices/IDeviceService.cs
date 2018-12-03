@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MfpStore.App.Interfaces
+namespace MfpStore.App.AppServices
 {
-    public interface IRepository
+    public interface IDeviceService
     {
     }
 }
