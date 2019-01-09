@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MfpStore.Web.Models.DeviceViewModel>
+
+<table>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+    @foreach (var device in Model)
+    {
+        <tr>
+            <td>
+                @device.Title
+            </td>
+            <td>
+                @device.Price
+            </td>
+            <td>
+                @device.Description
+            </td>
+        </tr>
+    }
+</table>
+
+<style>
+    td,th {
+        padding: 10px;
+    }
+</style>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AutoMapper;
 
 namespace MfpStore.App.AppServices
 {
@@ -8,7 +9,7 @@ namespace MfpStore.App.AppServices
     {
         public TModel MapTo<TModel>(object model)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<TModel>(model);
         }
     }
 }

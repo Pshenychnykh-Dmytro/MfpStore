@@ -9,29 +9,29 @@ namespace MfpStore.App.Data
 {
     public class BaseRepository<TEntity>: IRepository<TEntity> where TEntity: BaseModel
     {
-        protected EntityContext Context;
+        protected internal readonly EntityContext Context;
 
         public BaseRepository(EntityContext context)
             => Context = context;
 
-        public void Add(TEntity entity)
+        public virtual void Add(TEntity entity)
             => Context.Set<TEntity>().Add(entity);
 
-        public void Update(TEntity entity)
+        public virtual void Update(TEntity entity)
             => Context.Set<TEntity>().AddOrUpdate(entity);
 
-        public void Delete(Expression<Func<TEntity, bool>> condition)
+        public virtual void Delete(Expression<Func<TEntity, bool>> condition)
             => Context.Set<TEntity>()
                 .Where(condition).ToList()
                 .ForEach(x => Context.Set<TEntity>().Remove(x));
 
-        public TEntity FirstOrDefault(Expression<Func<TEntity, bool>> condition)
+        public virtual TEntity FirstOrDefault(Expression<Func<TEntity, bool>> condition)
             => Context.Set<TEntity>().FirstOrDefault(condition);
 
-        public IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> condition)
+        public virtual IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> condition)
             => Context.Set<TEntity>().Where(condition);
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
             => Context.Set<TEntity>().ToList();
     }
 }

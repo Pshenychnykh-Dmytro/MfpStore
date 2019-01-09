@@ -19,7 +19,7 @@ namespace MfpStore.App.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Add settings for db
+            modelBuilder.Entity<Device>().HasKey(d => d.Id);
             base.OnModelCreating(modelBuilder);
         }
     }
