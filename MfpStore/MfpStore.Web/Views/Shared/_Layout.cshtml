@@ -1,10 +1,12 @@
 ﻿@using MfpStore.Web.App_LocalResources
 @{
-    //var url = Context.Request.RawUrl == "/" ? $"/{GlobalRes.CurrentLang}/games" : Context.Request.RawUrl;
-    var currentAction = ViewContext.RouteData.Values["action"].ToString();
-    //var linkEn = url.Replace("RU", "EN");
-    //var linkRu = url.Replace("EN", "RU");
-    
+    var currentLang = ViewContext.RouteData.Values["lang"].ToString();
+    var url = Context.Request.RawUrl == "/" ? $"/{currentLang}" : Context.Request.RawUrl;
+
+    var linkEn = url.Replace(currentLang, "EN");
+    var linkRu = url.Replace(currentLang, "RU");
+    var linkUk = url.Replace(currentLang, "UK");
+
 }
 <!DOCTYPE html>
 <html>
@@ -24,9 +26,9 @@
             </div>
             <div class="col-sm-1">
                 <div class="row">
-                    @Html.ActionLink("RU", currentAction, new { lang = "RU" })|
-                    @Html.ActionLink("UA", currentAction, new { lang = "UK" })|
-                    @Html.ActionLink("EN", currentAction, new { lang = "EN" })|
+                    <a href="@linkRu">RU</a>|
+                    <a href="@linkUk">UA</a>|
+                    <a href="@linkEn">EN</a>|
                 </div>
                 <div>
                     <a>My Profile</a>
