@@ -9,7 +9,7 @@ using MfpStore.Web.Models;
 
 namespace MfpStore.Web.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : BaseController
     {
         private readonly IDeviceService _deviceService;
         private readonly IMapperService _mapperService;

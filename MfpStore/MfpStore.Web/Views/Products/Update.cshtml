@@ -1,8 +1,10 @@
 ﻿@{
     ViewBag.Title = "Update";
 }
+@using MfpStore.Web.App_LocalResources
 @model MfpStore.Web.Models.DeviceViewModel
 @using (Html.BeginForm("Update", "Products", FormMethod.Post))
 {
     @Html.EditorForModel()
+    <button>@GlobalRes.Update</button>
 }

@@ -1,9 +1,10 @@
-﻿<ul class="top-menu">
+﻿@using MfpStore.Web.App_LocalResources.TopMenu
+<ul class="top-menu">
     <li>
-        @Html.ActionLink("Home", "Index", "Home")
+        @Html.ActionLink(TopMenuRes.Main, "Index", "Home")
     </li>
     <li>
-        @Html.ActionLink("Products", "Index", "Products")
+        @Html.ActionLink(TopMenuRes.Products, "Index", "Products")
     </li>
 </ul>
 

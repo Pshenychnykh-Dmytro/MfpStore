@@ -162,11 +162,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_LocalResources\GlobalRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\GlobalRes.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalRes.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\GlobalRes.uk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalRes.uk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Products\ProductsRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Products\ProductsRes.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsRes.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Products\ProductsRes.uk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsRes.uk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\TopMenu\TopMenuRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopMenuRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\TopMenu\TopMenuRes.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopMenuRes.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\TopMenu\TopMenuRes.uk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopMenuRes.uk.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\api\apiAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DI\AutofacResolver.cs" />
@@ -220,7 +266,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
-    <Content Include="Views\Products\_Tile.cshtml" />
+    <Content Include="Views\Products\Partial\_Tile.cshtml" />
     <Content Include="Views\Shared\_Pages.cshtml" />
     <Content Include="Views\Products\Update.cshtml" />
     <Content Include="Views\Products\EditorTemplates\DeviceViewModel.cshtml" />
@@ -232,6 +278,7 @@
     <Folder Include="Areas\api\Models\" />
     <Folder Include="Areas\api\Views\Shared\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Products\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
@@ -248,16 +295,58 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\Global.resx" />
+    <EmbeddedResource Include="App_LocalResources\GlobalRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Products\ProductsRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductsRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Products\ProductsRes.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductsRes.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\Products\ProductsRes.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductsRes.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\Global.ua.resx" />
+    <EmbeddedResource Include="App_LocalResources\GlobalRes.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalRes.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MfpStore.App\MfpStore.App.csproj">
       <Project>{449ACDB4-AAFD-4CD4-96A8-9F9357A9EE5A}</Project>
       <Name>MfpStore.App</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\GlobalRes.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalRes.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\TopMenu\TopMenuRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TopMenuRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\TopMenu\TopMenuRes.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TopMenuRes.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\TopMenu\TopMenuRes.uk.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TopMenuRes.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

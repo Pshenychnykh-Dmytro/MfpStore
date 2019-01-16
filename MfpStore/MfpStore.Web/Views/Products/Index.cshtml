@@ -1,18 +1,20 @@
-﻿@model IEnumerable<MfpStore.Web.Models.DeviceViewModel>
+﻿@using MfpStore.Web.App_LocalResources
+@using MfpStore.Web.App_LocalResources.Products
+@model IEnumerable<MfpStore.Web.Models.DeviceViewModel>
 
 <table>
     <tr>
         <th>
-            Title
+            @ProductsRes.Title
         </th>
         <th>
-            Price
+            @ProductsRes.Price
         </th>
         <th>
-            Description
+            @ProductsRes.Description
         </th>
         <th>
-            @Html.ActionLink("Add", "Add")
+            @Html.ActionLink(GlobalRes.Add, "Add")
         </th>
     </tr>
     @foreach (var device in Model)
@@ -28,10 +30,10 @@
             @device.Description
         </td>
         <td>
-            @Html.ActionLink("Update", "Update", new { id = device.Id })
+            @Html.ActionLink(GlobalRes.Update, "Update", new { id = device.Id })
         </td>
         <td>
-            @Html.ActionLink("Delete", "Delete", new { id = device.Id })
+            @Html.ActionLink(GlobalRes.Delete, "Delete", new { id = device.Id })
         </td>
     </tr>
     }
