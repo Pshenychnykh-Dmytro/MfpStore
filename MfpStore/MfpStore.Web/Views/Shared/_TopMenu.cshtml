@@ -1,4 +1,4 @@
-﻿<ul>
+﻿<ul class="top-menu">
     <li>
         @Html.ActionLink("Home", "Index", "Home")
     </li>
@@ -8,12 +8,15 @@
 </ul>
 
 <style>
-    ul {
+    .top-menu {
         margin: 0;
         padding: 0;
     }
+    .top-menu > li {
+        display: inline;
+    }
+
     ul > li {
         list-style-type: none;
-        display: inline;
     }
 </style>

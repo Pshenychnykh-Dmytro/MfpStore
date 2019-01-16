@@ -1,0 +1,25 @@
+﻿@model MfpStore.Web.Models.DeviceViewModel
+@Html.HiddenFor(m => m.Id)
+    <ul>
+        <li>
+            <p>
+                @Html.LabelFor(m => m.Title)<br />
+                @Html.TextBoxFor(m => m.Title)
+            </p>
+        </li>
+        <li>
+            <p>
+                @Html.LabelFor(m => m.Description)<br />
+                @Html.TextBoxFor(m => m.Description)
+            </p>
+        </li>
+        <li>
+            <p>
+                @Html.LabelFor(m => m.Price)<br />
+                @Html.TextBoxFor(m => m.Price)
+            </p>
+        </li>
+        <li>
+            <button>Save</button>
+        </li>
+    </ul>

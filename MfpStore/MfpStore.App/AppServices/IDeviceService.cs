@@ -7,8 +7,10 @@ namespace MfpStore.App.AppServices
 {
     public interface IDeviceService
     {
-        void Add(InputDeviceDto deviceDto);
-        void Update(InputDeviceDto deviceDto);
+        void Add(DeviceDto deviceDto);
+        void Update(DeviceDto deviceDto);
+        void DeleteById(Guid id);
+        DeviceDto GetById(Guid id);
         IEnumerable<DeviceDto> GetAll();
     }
 }

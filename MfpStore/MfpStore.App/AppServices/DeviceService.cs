@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using MfpStore.App.AppServices.Dto;
 using MfpStore.App.Data;
+using MfpStore.App.Models;
 
 namespace MfpStore.App.AppServices
 {
@@ -17,14 +18,32 @@ namespace MfpStore.App.AppServices
             _mapper = mapper;
         }
 
-        public void Add(InputDeviceDto deviceDto)
+        public void Add(DeviceDto deviceDto)
         {
-            throw new NotImplementedException();
+            var device = _mapper.MapTo<Device>(deviceDto);
+            _unitOfWork.Devices.Add(device);
+            _unitOfWork.SaveChanges();
         }
 
-        public void Update(InputDeviceDto deviceDto)
+        public void Update(DeviceDto deviceDto)
         {
-            throw new NotImplementedException();
+            var device = _mapper.MapTo<Device>(deviceDto);
+            _unitOfWork.Devices.Update(device);
+            _unitOfWork.SaveChanges();
+        }
+
+        public void DeleteById(Guid id)
+        {
+            _unitOfWork.Devices.Delete(d => d.Id == id);
+            _unitOfWork.SaveChanges();
+        }
+
+        public DeviceDto GetById(Guid id)
+        {
+            var device = _unitOfWork.Devices.FirstOrDefault(d => d.Id == id);
+            var deviceDto = _mapper.MapTo<DeviceDto>(device);
+
+            return deviceDto;
         }
 
         public IEnumerable<DeviceDto> GetAll()

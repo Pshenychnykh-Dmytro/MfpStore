@@ -11,20 +11,29 @@
         <th>
             Description
         </th>
+        <th>
+            @Html.ActionLink("Add", "Add")
+        </th>
     </tr>
     @foreach (var device in Model)
     {
-        <tr>
-            <td>
-                @device.Title
-            </td>
-            <td>
-                @device.Price
-            </td>
-            <td>
-                @device.Description
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @device.Title
+        </td>
+        <td>
+            @device.Price
+        </td>
+        <td>
+            @device.Description
+        </td>
+        <td>
+            @Html.ActionLink("Update", "Update", new { id = device.Id })
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = device.Id })
+        </td>
+    </tr>
     }
 </table>
 

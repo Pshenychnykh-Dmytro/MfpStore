@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +16,7 @@ namespace MfpStore.Web.Util
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<Device, DeviceDto>().ReverseMap();
+                cfg.CreateMap<DeviceDto, Device>().ReverseMap();
                 cfg.CreateMap<DeviceDto, DeviceViewModel>().ReverseMap();
             });
         }

@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Update";
+}
+@model MfpStore.Web.Models.DeviceViewModel
+@using (Html.BeginForm("Update", "Products", FormMethod.Post))
+{
+    @Html.EditorForModel()
+}
