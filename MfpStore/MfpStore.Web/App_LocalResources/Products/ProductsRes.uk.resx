@@ -120,6 +120,9 @@
   <data name="Description" xml:space="preserve">
     <value>Опис</value>
   </data>
+  <data name="Device" xml:space="preserve">
+    <value>Пристрій</value>
+  </data>
   <data name="Picture" xml:space="preserve">
     <value>Зображення</value>
   </data>
