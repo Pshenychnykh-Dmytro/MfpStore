@@ -70,6 +70,15 @@ namespace MfpStore.Web.App_LocalResources.Products {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Устройство.
+        /// </summary>
+        public static string Device {
+            get {
+                return ResourceManager.GetString("Device", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Изображение.
         /// </summary>
         public static string Picture {

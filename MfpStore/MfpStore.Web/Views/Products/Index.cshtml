@@ -2,7 +2,7 @@
 @using MfpStore.Web.App_LocalResources.Products
 @model IEnumerable<MfpStore.Web.Models.DeviceViewModel>
 
-<table>
+<table class="mfp-table-desktop">
     <tr>
         <th>
             @ProductsRes.Title
@@ -39,6 +39,50 @@
     }
 </table>
 
+<table class="mfp-table-mobile">
+    <tbody>
+        @foreach (var device in Model)
+        {
+            <tr>
+                <th colspan="2">
+                    @ProductsRes.Device
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @ProductsRes.Title
+                </th>
+                <td>
+                    @device.Title
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @ProductsRes.Price
+                </th>
+                <td>
+                    @device.Price
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @ProductsRes.Description
+                </th>
+                <td>
+                    @device.Description
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink(GlobalRes.Update, "Update", new { id = device.Id })
+                </td>
+                <td>
+                    @Html.ActionLink(GlobalRes.Delete, "Delete", new { id = device.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 <style>
     td,th {
         padding: 10px;
