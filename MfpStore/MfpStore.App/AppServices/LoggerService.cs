@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MfpStore.App.AppServices
 {
-    public class LoggerService
+    public class LoggerService: ILoggerService
     {
     }
 }
